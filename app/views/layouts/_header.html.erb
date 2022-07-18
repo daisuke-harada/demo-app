@@ -1,7 +1,7 @@
 <div class="bg-black flex h-14 text-white w-full">
   <% if user_signed_in? %>
     <div class="m-2">
-      <%= link_to "マイページ", users_show_path(current_user) %>
+      <%= link_to "マイページ", user_path(current_user) %>
     </div>
     <div class="m-2">
       <%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
@@ -14,4 +14,7 @@
       <%= link_to "新規登録ページ", new_user_registration_path %>
     </div>
   <% end %>
+  <div class="m-2">
+    <%= link_to "ユーザー一覧", users_path %>
+  </div>
 </div>
