@@ -11,5 +11,6 @@
       <%= button_to 'Destroy this post', post_path(@post), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
     </div>
     <%= link_to 'Back to posts', posts_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= button_to "コメント新規登録", new_post_comment_path(@post.id), method: :get, class: "bg-pink-300 text-white my-5 p-2 rounded-md" if user_signed_in? && current_user != @post.user %>
   </div>
 </div>
