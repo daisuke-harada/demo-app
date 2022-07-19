@@ -10,6 +10,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(post_params.merge(user_id: current_user.id, post_id: params[:post_id]))
     @comment.save
+    redirect_to post_path(params[:post_id])
   end
 
   def update
