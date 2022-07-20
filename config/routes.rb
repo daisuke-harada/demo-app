@@ -3,8 +3,12 @@ Rails.application.routes.draw do
   get 'pages/index'
   get 'pages/show'
   devise_for :users
-  resources :posts
   resources :users
+  resources :posts do
+    resources :comments, only: [:new, :create]
+  end
+
+  resources :comments, only: [:edit, :update]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
