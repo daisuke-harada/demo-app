@@ -12,7 +12,6 @@ class CommentsController < ApplicationController
     @post = @comment.post
     if @comment.save
       @post.save_notification_comment!(current_user, @comment)
-      binding.pry
       redirect_to post_path(@post)
     else
       render 'posts/show'
