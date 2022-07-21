@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(post_params.merge(user_id: current_user.id, post_id: params[:post_id]))
     @post = @comment.post
     if @comment.save
-      @post.save_notification_comment!(current_user, @comment)
+      @post.save_notification_comment!(current_user, @comment.id, @post.user_id)
       redirect_to post_path(@post)
     else
       render 'posts/show'
