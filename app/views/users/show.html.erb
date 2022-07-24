@@ -1,8 +1,13 @@
-<div class="w-full flex">
-  <div class="m-5 w-1/6 border border-black">
+<div class="flex flex-col m-5">
+  <div class="w-full m-auto">
+    <%= render @notifications.where(checked: false) %>
   </div>
-  <div class="m-5 w-4/6">
-    <div class="font-bold text-4xl m-2"><%= @user.name %></div>
-    <div class="font-bold text-4xl m-2"><%= @user.email %></div>
+  <div class="w-full flex">
+    <div class="m-5 w-1/6 border border-black">
+    </div>
+    <div class="m-5 w-4/6">
+      <div class="font-bold text-4xl m-2"><%= @user.name %></div>
+      <div class="font-bold text-4xl m-2"><%= @user.email %></div>
+    </div>
   </div>
 </div>
