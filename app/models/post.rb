@@ -10,7 +10,10 @@ class Post < ApplicationRecord
       comment_id: comment_id,
       visited_id: visited_id
     )
-    binding.pry
+    # 自分の投稿に対するコメントの場合は、通知済みとする
+    if notification.visitor_id == notification.visited_id
+      notification.checked = true
+    end
     notification.save
   end
 end

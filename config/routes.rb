@@ -9,8 +9,5 @@ Rails.application.routes.draw do
   end
 
   resources :comments, only: [:edit, :update]
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :notifications, only: [:index]
 end
