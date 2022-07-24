@@ -3,6 +3,11 @@
     <strong class="block font-medium mb-1">Content:</strong>
     <%= post.content %>
   </p>
+    <p class="my-5">
+    <strong class="block font-medium mb-1">User:</strong>
+    <%= link_to post.user.name, user_path(post.user) %>
+  </p>
+
 
   <% if action_name != "show" %>
     <%= link_to "Show this post", post, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
