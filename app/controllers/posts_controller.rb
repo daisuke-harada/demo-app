@@ -8,6 +8,12 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    if current_user == @post.user
+      # 通知を確認する処理
+      current_user.passive_notifications.where(checked: false).each do |notification|
+        notification.update(checked: true)
+      end
+    end
   end
 
   # GET /posts/new
