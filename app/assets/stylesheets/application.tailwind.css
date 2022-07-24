@@ -11,3 +11,6 @@
 }
 
 */
+a {
+  @apply text-cyan-300 font-bold;
+}
