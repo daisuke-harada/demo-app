@@ -1,8 +1,8 @@
 require "test_helper"
 
-class RommsControllerTest < ActionDispatch::IntegrationTest
+class RoomsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get romms_index_url
+    get rooms_index_url
     assert_response :success
   end
 end
