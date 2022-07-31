@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'romms/show'
   root 'pages#index'
   get 'pages/index'
   get 'pages/show'
