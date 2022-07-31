@@ -1,4 +1,4 @@
 class RommsController < ApplicationController
-  def show
+  def index
   end
 end

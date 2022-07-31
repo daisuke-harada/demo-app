@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'romms/show'
+  get 'romms/index'
   root 'pages#index'
   get 'pages/index'
   get 'pages/show'
@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   end
 
   resources :comments, only: [:edit, :update]
-  resources :notifications, only: [:index]
+  resources :notifications, only: :index
 end
