@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount ActionCable.server => '/cable' #アクションケーブルを有効化
+
   get 'rooms/index'
   root 'pages#index'
   get 'pages/index'
