@@ -10,6 +10,7 @@ const appRoom = consumer.subscriptions.create("RoomChannel", {
   },
 
   received(data) {
+    console.log(data);
     return alert(data['message']);
   },
 
@@ -18,10 +19,10 @@ const appRoom = consumer.subscriptions.create("RoomChannel", {
   }
 });
 
-window.addEventListener("keypress", function(e) {
+window.document.onkeydown = function(e) {
   if (e.key === 'Enter') {
     appRoom.speak(e.target.value);
     e.target.value = '';
     e.preventDefault();
   }
-});
+};
