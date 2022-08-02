@@ -18,7 +18,7 @@ class RoomChannel < ApplicationCable::Channel
     # Any cleanup needed when channel is unsubscribed
   end
 
-  # room_channel.jsのreceivedメソッドにdata[‘message’]を送信しています。
+  # room_channel.jsのreceivedメソッドにdata[‘message’]キーワード引数で送信しています。
   def speak(data)
     ActionCable.server.broadcast 'room_channel',{ message: data['message'] }
   end
