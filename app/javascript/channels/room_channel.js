@@ -10,7 +10,6 @@ const appRoom = consumer.subscriptions.create("RoomChannel", {
   },
 
   received(data) {
-    console.log(data);
     return alert(data['message']);
   },
 

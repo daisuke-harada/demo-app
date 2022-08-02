@@ -20,6 +20,6 @@ class RoomChannel < ApplicationCable::Channel
 
   # room_channel.jsのreceivedメソッドにdata[‘message’]を送信しています。
   def speak(data)
-    ActionCable.server.broadcast 'room_channel', message: data['message']
+    ActionCable.server.broadcast 'room_channel',{ message: data['message'] }
   end
 end
