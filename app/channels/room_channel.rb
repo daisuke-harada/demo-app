@@ -20,6 +20,7 @@ class RoomChannel < ApplicationCable::Channel
 
   # room_channel.jsのreceivedメソッドにdata[‘message’]キーワード引数で送信しています。
   def speak(data)
-    ActionCable.server.broadcast 'room_channel',{ message: data['message'] }
+    # ActionCable.server.broadcast 'room_channel',{ message: data['message'] }
+    Message.create! { content: data['message'] }
   end
 end
